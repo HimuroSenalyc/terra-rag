@@ -1,0 +1,22 @@
+[Unit]
+Description=llama.cpp server (local LLM)
+After=network.target
+
+[Service]
+Type=simple
+User=player
+WorkingDirectory=/home/player/llama.cpp/build/bin
+ExecStart=/home/player/llama.cpp/build/bin/llama-server \
+  -m /home/player/models/qwen2.5-3b-instruct-q4_k_m.gguf \
+  --host 127.0.0.1 \
+  --port 8081 \
+  -c 8192 \
+  --threads 16 \
+  --jinja
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

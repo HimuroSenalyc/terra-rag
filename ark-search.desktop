@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=方舟剧情检索
+Comment=本地向量检索 · 防剧透
+Exec=bash -c 'cd /home/player && source /home/player/emb-venv/bin/activate && ARK_INDEX=/home/player/ark_index.npz ARK_TITLE=方舟剧情检索 python3 /home/player/ark_tui.py'
+Icon=utilities-terminal
+Terminal=true
+Categories=Utility;
+Keywords=arknights;story;

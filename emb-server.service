@@ -1,0 +1,22 @@
+[Unit]
+Description=Local Embedding Server (bge-small-zh-v1.5)
+After=network.target
+
+[Service]
+Type=simple
+User=player
+WorkingDirectory=/home/player
+Environment=OMP_NUM_THREADS=16
+Environment=MKL_NUM_THREADS=16
+Environment=TOKENIZERS_PARALLELISM=false
+Environment=HTTP_PROXY=http://127.0.0.1:7890
+Environment=HTTPS_PROXY=http://127.0.0.1:7890
+Environment=NO_PROXY=localhost,127.0.0.1
+ExecStart=/home/player/emb-venv/bin/python3 -m uvicorn emb_server:app --host 127.0.0.1 --port 8000
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

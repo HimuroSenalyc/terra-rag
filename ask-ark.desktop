@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=方舟问答
+Comment=本地知识库 + 本地 AI（可选章节范围）
+Exec=/home/player/ask_gui.sh
+Icon=system-search
+Terminal=false
+Categories=Utility;
+Keywords=arknights;ask;rag;search;
